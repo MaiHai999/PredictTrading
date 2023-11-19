@@ -1,20 +1,19 @@
-import pandas as pd #đọc dữ liệu
-import numpy as np #xử lý dữ liệu
-import matplotlib.pyplot as plt #vẽ biểu đồ
-from sklearn.preprocessing import MinMaxScaler #chuẩn hóa dữ liệu
-from keras.callbacks import ModelCheckpoint #lưu lại huấn luyện tốt nhất
-from tensorflow.keras.models import load_model #tải mô hình
+import pandas as pd 
+import numpy as np 
+import matplotlib.pyplot as plt 
+from sklearn.preprocessing import MinMaxScaler 
+from keras.callbacks import ModelCheckpoint 
+from tensorflow.keras.models import load_model 
 
-#các lớp để xây dựng mô hình
-from keras.models import Sequential #đầu vào
-from keras.layers import LSTM #học phụ thuộc
-from keras.layers import Dropout #tránh học tủ
-from keras.layers import Dense #đầu ra
+from keras.models import Sequential 
+from keras.layers import LSTM 
+from keras.layers import Dropout 
+from keras.layers import Dense 
 
 #kiểm tra độ chính xác của mô hình
-from sklearn.metrics import r2_score #đo mức độ phù hợp
-from sklearn.metrics import mean_absolute_error #đo sai số tuyệt đối trung bình
-from sklearn.metrics import mean_absolute_percentage_error #đo % sai số tuyệt đối trung bình
+from sklearn.metrics import r2_score 
+from sklearn.metrics import mean_absolute_error 
+from sklearn.metrics import mean_absolute_percentage_error 
 
 #đọc data
 arrDf = []
