@@ -15,7 +15,7 @@ from sklearn.metrics import r2_score
 from sklearn.metrics import mean_absolute_error 
 from sklearn.metrics import mean_absolute_percentage_error 
 
-#đọc data
+#read data
 arrDf = []
 
 file_paths = ["dataset/FPT.csv" , "dataset/MSN.csv" , "dataset/PNJ.csv" , "dataset/VIC.csv"]
@@ -24,7 +24,7 @@ for path in file_paths:
   arrDf.append(df)
 
 
-#hàm xử lý số liệu
+#funtion processing data
 def preprocess_data(df , index):
     df["Date/Time"] = pd.to_datetime(df["Date/Time"], format="%m/%d/%Y %H:%M")
     df["Ticker"] = index                                                              #chuyển nhán công ty thành một số
@@ -73,7 +73,7 @@ list_x_test = []
 list_y_test = []
 list_data = []
 
-#chuẩn hóa dữ liệu
+#Scaler data
 sc = MinMaxScaler(feature_range=(0,1))
 
 for df in arrDfProcess:
@@ -115,7 +115,7 @@ model.fit(total_x_train,total_y_train,epochs=10,batch_size=50,verbose=2,callback
 
 final_model = load_model("Downloads/save_model.hdf5")
 
-#dự đoán
+#predict
 def convertY_lableArr(total_y_test):
   total_y_test1 = np.hstack((np.zeros((total_y_test.shape[0], 1)), total_y_test))
   total_y_test2 = np.hstack((total_y_test1, np.zeros((total_y_test.shape[0], 2))))
